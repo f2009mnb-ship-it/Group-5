@@ -1,0 +1,299 @@
+
+* {
+  margin: 0;           
+  padding: 0;         
+  box-sizing: border-box;
+ 
+}
+
+body {
+  font-family: sans-serif;
+ 
+  background: #f0f2f7; /* สีพื้นหลังทั้งหน้า (เทาอ่อน) */
+}
+
+.navbar {
+  background: white;
+  padding: 16px 32px;
+ 
+  display: flex;
+
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold; 
+  color: blue;
+  font-style: italic; 
+}
+
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links a {
+  margin: 0 12px;         
+  text-decoration: none;  
+  color: #444;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  color: blue;
+  
+}
+
+.layout {
+  display: flex;       
+  gap: 20px;          
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 16px;    
+
+.sidebar {
+  width: 200px;       
+  flex-shrink: 0;
+  background: white;
+  border-radius: 12px; 
+  padding: 20px;
+  height: fit-content;
+  text-align: center;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%; 
+  margin: 0 auto 8px;
+  object-fit: cover;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.member {
+  font-size: 11px;
+  color: #888;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.sidebar nav a {
+  display: block;
+  text-align: left;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: #444;
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
+
+.sidebar nav a:hover { background: #f0f2f7; }
+
+.sidebar nav a.active {
+  background: #eeeeff;
+  color: blue;
+  font-weight: bold;
+}
+
+.logout {
+  width: 100%;        
+  margin-top: 16px;
+  padding: 10px;
+  background: blue;
+  color: white;
+  border: none;        
+  border-radius: 8px;
+  cursor: pointer;    
+  font-size: 14px;
+}
+
+
+.content {
+  flex: 1;
+}
+
+.content h2 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: blue;
+  font-weight: bold;
+}
+
+.cart-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.cart-list {
+  flex: 1;            
+  display: flex;
+  flex-direction: column;
+  gap: 12px;           
+}
+
+.cart-item {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;       
+  align-items: center; 
+  gap: 16px;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  
+  border-radius: 8px;
+}
+
+.item-info {
+  flex: 1;      
+}
+
+.item-info h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.item-info p {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.remove {
+  font-size: 13px;
+  color: blue;
+  text-decoration: none;
+}
+
+.item-right {
+  text-align: right;   
+}
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  justify-content: flex-end; 
+}
+
+.qty button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;  
+  border: none;
+  background: #eeeeff;
+  color: blue;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.qty span {
+  font-weight: bold;   
+}
+
+.price {
+  color: blue;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.summary {
+  width: 260px;       
+  flex-shrink: 0;      
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.summary h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.summary-row.total {
+  font-weight: bold;
+  font-size: 16px;
+  color: #222;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 12px 0;
+}
+
+.discount-label {
+  font-size: 11px;
+  color: #aaa;
+  letter-spacing: 1px;
+  margin: 16px 0 6px;
+}
+
+.discount-row {
+  display: flex;     
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.discount-row input {
+  flex: 1;             
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.apply-btn {
+  padding: 8px 14px;
+  background: #eeeeff;
+  color: blue;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 14px;
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background: darkblue;
+}
+}
