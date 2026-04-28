@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Shop - Your Bag</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="flex items-center mb-12 bg-white p-3.5 shadow-sm">
+        <div class="flex items-center gap-8 ml-30">
+            <h1 class="text-blue-700 italic font-bold text-2xl">Double Shop</h1>
+        </div>
+        <div class="flex-1 relative md:block ml-41">
+            <span class="absolute inset-y-0 left-3 flex items-center text-gray-400">
+                <i data-lucide="search" class="w-4 h-4"></i>
+            </span>
+            <input type="text" placeholder="Search curated finds..." class="pl-10 pr-4 py-2 bg-gray-100 rounded-full text-sm w-64 focus:outline-none">
+        </div>
+        <div class="flex items-center ml-50 gap-10 mr-50">
+            <i class="fa-solid fa-cart-arrow-down w-5 h-5 text-gray-600 cursor-pointer text-xl"></i>
+            <div class="w-8 h-8 flex items-center justify-center cursor-pointer">
+                <i class="fa-solid fa-user w-5 h-5 text-xl"></i>
+            </div>
+        </div>
+    </header>
+    
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <h2 class="text-3xl font-bold mb-2">Your Bag</h2>
+                <p class="text-gray-500 mb-8">There are <span id="item-count-top" class="font-semibold text-blue-700">0</span> items in your cart.</p>
+                
+                <div id="cart-items" class="space-y-4">
+                </div>
+
+                <div class="mt-6">
+                    <button onclick="addNewItem(); window.location.href='menu.html';" class="w-full py-4 border-2 border-dashed border-gray-200 rounded-2xl text-gray-500 font-bold flex items-center justify-center gap-2 hover:border-blue-400 hover:text-blue-600 hover:bg-blue-50 transition-all group">
+                        <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </div>
+                        Add More Item
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm h-fit border border-gray-100">
+                <h3 class="text-xl font-bold mb-6">Order Summary</h3>
+                <div class="space-y-4 text-gray-600">
+                    <div class="flex justify-between">
+                        <span>Subtotal</span>
+                        <span id="subtotal" class="font-bold text-black">$0.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Shipping</span>
+                        <span id="shipping" class="font-bold text-black">$0.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Tax estimate</span>
+                        <span id="tax" class="font-bold text-black">$0.00</span>
+                    </div>
+                    <hr class="border-gray-100 my-4">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-lg font-bold text-black">Total</span>
+                        <span id="total-price" class="text-2xl font-black text-blue-700">$0.00</span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-wider text-gray-400">Discount Code</label>
+                        <div class="flex gap-2">
+                            <input type="text" value="FREESHIP26" class="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:outline-none">
+                            <button class="bg-blue-700 text-white px-6 py-2 rounded-lg font-bold text-sm hover:bg-blue-300 transition">Apply</button>
+                        </div>
+                    </div>
+
+                    <button onclick="confirmOrder(); window.location.href='payment.html';" class="w-full bg-blue-700 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-blue-300 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center justify-center gap-2">
+                    <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        Confirm Order
+                    </button>
+
+                    <p class="text-center text-xs text-gray-400 mt-4">
+                        By clicking confirm, you agree to our 
+                        <a href="#" class="text-blue-700 underline hover:text-blue-800 transition-colors">Terms & Conditions</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [
+            {
+                id: 1,
+                name: "Puma Speedcat OG – Red/White",
+                details: "Size: 40 | Color: Red/White",
+                price: 129.00,
+                quantity: 2,
+                image: "https://i.pinimg.com/1200x/67/ba/df/67badf5015601a8006c6a4c2908c2a38.jpg"
+            },
+        ];
+
+        const shippingRate = 12.50;
+        const taxRate = 0.08;
+
+        function renderCart() {
+            const container = document.getElementById('cart-items');
+            const itemCountTop = document.getElementById('item-count-top');
+            
+            container.innerHTML = '';
+            let subtotal = 0;
+            let totalItems = 0;
+
+            cart.forEach(item => {
+                subtotal += item.price * item.quantity;
+                totalItems += item.quantity;
+
+                container.innerHTML += `
+                    <div class="bg-gray-50 p-6 rounded-2xl flex flex-col sm:flex-row gap-6 border border-transparent hover:border-gray-200 transition">
+                        <img src="${item.image}" alt="${item.name}" class="w-32 h-32 object-contain bg-white rounded-xl p-2">
+                        <div class="flex-1 flex flex-col justify-between">
+                            <div>
+                                <h4 class="font-bold text-gray-900 leading-snug mb-1">${item.name}</h4>
+                                <p class="text-sm text-gray-500">${item.details}</p>
+                                <button onclick="removeItem(${item.id})" class="mt-4 flex items-center gap-1 text-red-500 text-sm font-bold hover:underline">
+                                    <i data-lucide="trash-2" class="w-4 h-4"></i> Remove
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-end justify-between">
+                            <div class="flex items-center bg-gray-200 rounded-full p-1">
+                                <button onclick="updateQty(${item.id}, -1)" class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-black">—</button>
+                                <span class="w-8 text-center font-bold text-sm">${item.quantity}</span>
+                                <button onclick="updateQty(${item.id}, 1)" class="w-8 h-8 flex items-center justify-center bg-blue-700 text-white rounded-full hover:bg-blue-300">+</button>
+                            </div>
+                            <span class="text-xl font-black text-blue-700">$${(item.price * item.quantity).toFixed(2)}</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            itemCountTop.innerText = totalItems;
+            calculateSummary(subtotal);
+            lucide.createIcons();
+        }
+
+        function updateQty(id, change) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.quantity = Math.max(1, item.quantity + change);
+                renderCart();
+            }
+        }
+
+        function removeItem(id) {
+            cart = cart.filter(i => i.id !== id);
+            renderCart();
+        }
+
+        function calculateSummary(subtotal) {
+            const tax = subtotal * taxRate;
+            const total = subtotal > 0 ? subtotal + shippingRate + tax : 0;
+
+            document.getElementById('subtotal').innerText = `$${subtotal.toFixed(2)}`;
+            document.getElementById('shipping').innerText = subtotal > 0 ? `$${shippingRate.toFixed(2)}` : '$0.00';
+            document.getElementById('tax').innerText = `$${tax.toFixed(2)}`;
+            document.getElementById('total-price').innerText = `$${total.toFixed(2)}`;
+        }
+
+        renderCart();
+
+        function confirmOrder() {
+            const total = document.getElementById('total-price').innerText;
+            if (cart.length === 0) {
+                alert("Your bag is empty. Please add items before confirming.");
+                return;
+            }
+            
+            alert(`Order Confirmed!\nTotal Amount: ${total}\nNext, please select your payment method.`);
+        }
+    </script>
+</body>
+</html>

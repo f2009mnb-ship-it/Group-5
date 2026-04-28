@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoubleShop - 12.12 Mega Sale</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .hover-bounce {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hover-bounce:hover {
+            transform: scale(1.05);
+        }
+        
+        .custom-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between shadow-sm">
+        <div class="flex max-w-7xl mx-auto items-center gap-47">
+            <h1 class="text-2xl font-bold text-blue-700 italic">Double Shop</h1>
+            <div class="relative flex-1 max-w-md mx-8 hidden md:block w-96">
+                <input type="text" placeholder="Search for products, brands and shops" 
+                       class="w-full bg-gray-100 border-none rounded-full py-2 px-4 pl-10 focus:ring-2 focus:ring-blue-500">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-gray-400"></i>
+            </div>
+        </div>
+        <div class="flex items-center gap-6 text-sm font-medium">
+            <a href="#" class="text-blue-700 border-b-2 border-blue-700">Flash Sales</a>
+            <a href="#" class="hover:text-blue-700">New Arrivals</a>
+            <a href="#" class="hover:text-blue-700">Best Sellers</a>
+            <a href="#" class="hover:text-blue-700">Brands</a>
+            <div class="flex items-center gap-4 ml-4 text-xl">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+                <i class="fa-solid fa-star"></i>
+                <i onclick="window.location.href='login.html'" class="fa-solid fa-user hover:text-blue-700"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex">
+        <aside class="w-64 h-[calc(100vh-64px)] sticky top-[64px] bg-white border-r border-gray-200 p-6 overflow-y-auto custom-scroll">
+            <h3 class="font-bold mb-4 text-gray-500 uppercase text-xs">Categories</h3>
+            <ul class="space-y-4">
+                <li onclick="window.location.href='menu.html'" class="flex items-center gap-3 text-gray-500 hover:text-blue-700 cursor-pointer p-2 hover:bg-gray-50 rounded-lg transition-all">
+                    <i class="fa-solid fa-computer"></i> Electronics
+                </li>
+                <li class="flex items-center gap-3 text-gray-500 hover:text-blue-700 cursor-pointer p-2 hover:bg-gray-50 rounded-lg transition-all">
+                    <i class="fa-solid fa-shirt"></i> Fashion
+                </li>
+                <li class="flex items-center gap-3 text-gray-500 hover:text-blue-700 cursor-pointer p-2 hover:bg-gray-50 rounded-lg transition-all">
+                    <i class="fa-solid fa-house"></i> Home & Living
+                </li>
+                <li class="flex items-center gap-3 text-gray-500 hover:text-blue-700 cursor-pointer p-2 hover:bg-gray-50 rounded-lg transition-all">
+                    <i class="fa-solid fa-heart"></i> Health & Beauty
+                </li>
+                <li class="flex items-center gap-3 text-gray-500 hover:text-blue-700 cursor-pointer p-2 hover:bg-gray-50 rounded-lg transition-all">
+                    <i class="fa-solid fa-futbol"></i> Sports
+                </li>
+                <li class="flex items-center gap-3 text-gray-500 hover:text-blue-700 cursor-pointer p-2 hover:bg-gray-50 rounded-lg transition-all">
+                    <i class="fa-solid fa-robot"></i> Toys
+                </li>
+            </ul>
+            <button class="w-full mt-8 py-2 bg-gray-200 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors">
+                View All Categories
+            </button>
+        </aside>
+
+        <main class="flex-1 p-8">
+            <div class="bg-gradient-to-r from-blue-700 to-blue-900 rounded-3xl p-12 text-white flex justify-between items-center relative overflow-hidden mb-12">
+                <div class="z-10 max-w-md">
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-bold mb-4 inline-block uppercase">Limited Time Offer</span>
+                    <h2 class="text-6xl font-black mb-4">12.12 MEGA SALE</h2>
+                    <p class="text-lg opacity-90 mb-8">Up to 90% off on all premium tech and fashion essentials. Your curator picks are here.</p>
+                    <button class="bg-white text-blue-700 px-8 py-3 rounded-full font-bold hover-bounce">Shop the Sale</button>
+                </div>
+                <div class="text-right">
+                    <img src="https://www.beartai.com/wp-content/uploads/2025/07/iPhone-17-Pro-1.jpg">
+                </div>
+            </div>
+
+            <section class="mb-12">
+                <div class="flex justify-between items-end mb-6">
+                    <h3 class="text-2xl font-black italic text-blue-800">FLASH SALE</h3>
+                    <a href="#" class="text-blue-600 font-bold text-lg">View All</a>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <div onclick="window.location.href='preview.html'" class="bg-white p-4 rounded-2xl shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                        <div class="relative mb-4 bg-gray-50 rounded-xl p-6">
+                            <span class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded">-45%</span>
+                            <img src="https://i.pinimg.com/1200x/67/ba/df/67badf5015601a8006c6a4c2908c2a38.jpg" alt="Puma" class="w-full h-40 object-cover">
+                        </div>
+                        <h4 class="font-bold text-sm mb-1">Puma Speedcat OG – Red/White</h4>
+                        <div class="flex items-baseline gap-2 mb-3">
+                            <span class="text-blue-600 font-bold">$129.00</span>
+                            <span class="text-gray-400 text-xs line-through">$235.00</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-blue-600 h-full w-[75%]"></div>
+                        </div>
+                        <p class="text-[10px] text-gray-500 mt-1 font-bold">75% SOLD</p>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                         <div class="relative mb-4 bg-gray-50 rounded-xl p-6">
+                            <span class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded">-60%</span>
+                            <img src="https://i.pinimg.com/736x/69/50/82/695082caa33e275191ef8ee05bd9b316.jpg" alt="Mouse" class="w-full h-40 object-cover">
+                        </div>
+                        <h4 class="font-bold text-sm mb-1">Mouse Gaming</h4>
+                        <div class="flex items-baseline gap-2 mb-3">
+                            <span class="text-blue-600 font-bold">$45.00</span>
+                            <span class="text-gray-400 text-xs line-through">$112.00</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-1.5 rounded-full">
+                            <div class="bg-blue-600 h-full w-[85%]"></div>
+                        </div>
+                        <p class="text-[10px] text-gray-500 mt-1 font-bold">85% SOLD</p>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                         <div class="relative mb-4 bg-gray-50 rounded-xl p-6">
+                            <span class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded">-47%</span>
+                            <img src="https://i.pinimg.com/736x/5f/90/8d/5f908d55b429895c7115893a0cf8c440.jpg" alt="Mouse" class="w-full h-40 object-cover">
+                        </div>
+                        <h4 class="font-bold text-sm mb-1">Glad2Glow Milk Amino Acid Gentle Cleanser</h4>
+                        <div class="flex items-baseline gap-2 mb-3">
+                            <span class="text-blue-600 font-bold">$4.50</span>
+                            <span class="text-gray-400 text-xs line-through">$8.50</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-1.5 rounded-full">
+                            <div class="bg-blue-600 h-full w-[50%]"></div>
+                        </div>
+                        <p class="text-[10px] text-gray-500 mt-1 font-bold">50% SOLD</p>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                         <div class="relative mb-4 bg-gray-50 rounded-xl p-6">
+                            <span class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded">-32%</span>
+                            <img src="https://thumb.pccomponentes.com/w-530-530/articles/1088/10880908/4659-sharp-led-43-43gk4245e-ultrahd-4k-tivo-tv-especificaciones.jpg" alt="Mouse" class="w-full h-40 object-cover">
+                        </div>
+                        <h4 class="font-bold text-sm mb-1">TV Sharp LED 43GK4245E 43" 4K UltraHD 60Hz Smart TV AI OS Dolby Vision Atmos</h4>
+                        <div class="flex items-baseline gap-2 mb-3">
+                            <span class="text-blue-600 font-bold">$215.00</span>
+                            <span class="text-gray-400 text-xs line-through">$320.00</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-1.5 rounded-full">
+                            <div class="bg-blue-600 h-full w-[90%]"></div>
+                        </div>
+                        <p class="text-[10px] text-gray-500 mt-1 font-bold">90% SOLD</p>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                         <div class="relative mb-4 bg-gray-50 rounded-xl p-6">
+                            <span class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded">-40%</span>
+                            <img src="https://shoenami.com.ph/cdn/shop/files/THEMONSTERS-IFOUNDYOUVinylFaceDoll5.jpg?v=1729692799&width=1000" alt="Mouse" class="w-full h-40 object-cover">
+                        </div>
+                        <h4 class="font-bold text-sm mb-1">Pop Mart - THE MONSTERS - I Found You Vinyl Face Doll</h4>
+                        <div class="flex items-baseline gap-2 mb-3">
+                            <span class="text-blue-600 font-bold">$90.00</span>
+                            <span class="text-gray-400 text-xs line-through">$150.00</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-1.5 rounded-full">
+                            <div class="bg-blue-600 h-full w-[99%]"></div>
+                        </div>
+                        <p class="text-[10px] text-gray-500 mt-1 font-bold">99% SOLD</p>
+                    </div>
+                </div>
+                
+                <h3 class="mt-10 text-2xl font-bold mb-10 text-gray-800">Popular Categories</h3>
+    
+                <div class="flex gap-10 overflow-x-auto pb-6 custom-scroll snap-x">
+                    
+                    <div class="flex-none w-24 text-center snap-start group cursor-pointer">
+                        <div class="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-3 hover-bounce group-hover:bg-blue-100 transition-all shadow-sm">
+                            <i class="fa-solid fa-mobile text-2xl"></i>
+                        </div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-600 group-hover:text-blue-600 transition-colors">Mobiles</p>
+                    </div>
+
+                    <div class="flex-none w-24 text-center snap-start group cursor-pointer">
+                        <div class="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-3 hover-bounce group-hover:bg-blue-100 transition-all shadow-sm">
+                            <i class="fa-etch fa-solid fa-laptop text-2xl"></i>
+                        </div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-600 group-hover:text-blue-600 transition-colors">Laptops</p>
+                    </div>
+
+                    <div class="flex-none w-24 text-center snap-start group cursor-pointer">
+                        <div class="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-3 hover-bounce group-hover:bg-blue-100 transition-all shadow-sm">
+                            <i class="fa-solid fa-shirt text-2xl"></i>
+                        </div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-600 group-hover:text-blue-600 transition-colors">Fashion</p>
+                    </div>
+
+                    <div class="flex-none w-24 text-center snap-start group cursor-pointer">
+                        <div class="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-3 hover-bounce group-hover:bg-blue-100 transition-all shadow-sm">
+                            <i class="fa-solid fa-pump-soap text-2xl"></i>
+                        </div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-600 group-hover:text-blue-600 transition-colors">Beauty</p>
+                    </div>
+
+                    <div class="flex-none w-24 text-center snap-start group cursor-pointer">
+                        <div class="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-3 hover-bounce group-hover:bg-blue-100 transition-all shadow-sm">
+                            <i class="fa-solid fa-couch text-2xl"></i>
+                        </div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-600 group-hover:text-blue-600 transition-colors">furniture</p>
+                    </div>
+
+                    <div class="flex-none w-24 text-center snap-start group cursor-pointer">
+                        <div class="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-3 hover-bounce group-hover:bg-blue-100 transition-all shadow-sm">
+                            <i class="fa-solid fa-bath text-2xl"></i>
+                        </div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-600 group-hover:text-blue-600 transition-colors">home</p>
+                    </div>
+
+                    <div class="flex-none w-24 text-center snap-start group cursor-pointer">
+                        <div class="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-3 hover-bounce group-hover:bg-blue-100 transition-all shadow-sm">
+                            <i class="fa-solid fa-dumbbell text-2xl"></i>
+                        </div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-600 group-hover:text-blue-600 transition-colors">fitness</p>
+                    </div>
+
+                    <div class="flex-none w-24 text-center snap-start group cursor-pointer">
+                        <div class="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-3 hover-bounce group-hover:bg-blue-100 transition-all shadow-sm">
+                            <i class="fa-solid fa-gamepad text-2xl"></i>
+                        </div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-gray-600 group-hover:text-blue-600 transition-colors">gaming</p>
+                    </div>
+                </div>
+
+                <section class="mt-16 mb-12">
+                    <div class="flex justify-between items-center mb-8 border-b border-gray-100">
+                        <h3 class="text-2xl font-bold text-gray-800 pb-4">Just For You</h3>
+                        <div class="flex gap-8 text-sm font-bold text-gray-400">
+                            <button class="text-blue-600 border-b-2 border-blue-600 pb-4">Recommended</button>
+                            <button class="hover:text-gray-600 pb-4 transition-colors">Top Sellers</button>
+                            <button class="hover:text-gray-600 pb-4 transition-colors">Daily Discover</button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                        
+                        <div class="bg-white rounded-2xl p-4 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative overflow-hidden">
+                                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-black?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692923777972" alt="iPhone 15" class="w-full h-40 object-cover ">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">New Tech</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">Iphone 15 256GB black</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$899.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★★★</span>
+                                <span class="text-gray-400 text-[10px]">(1.2k sold)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative">
+                                <img src="https://m.media-amazon.com/images/I/61hg4WqtorL._AC_SX569_.jpg" alt="Jacket" class="w-full h-40 object-cover">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Fashion</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">Essential Cotton Crewneck - Pack o...</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$45.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★★★</span>
+                                <span class="text-gray-400 text-[10px]">(5k+ sold)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative">
+                                <img src="https://i.pinimg.com/1200x/ce/ca/af/cecaaf7805a5d0e3f9ec9a20cd5becd6.jpg" alt="Table" class="w-full h-40 object-cover">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Lifestyle</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">Table Gaming</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$28.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★☆☆</span>
+                                <span class="text-gray-400 text-[10px]">(800 sold)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative">
+                                <img src="https://images.hothardware.com/contentimages/article/3292/content/small_lid-apple-macbook-pro-14-m2-pro-2023.jpg" alt="Laptop" class="w-full h-40 object-cover">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Premium</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">MacBook Pro 14</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$1,249.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★★★</span>
+                                <span class="text-gray-400 text-[10px]">(450 sold)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative">
+                                <img src="https://alphaserum.paris/cdn/shop/files/DE00612-NEW-PACKSHOTS-ECOM-AS-SERUM-60ML-FACE-SVHAA_1000x.jpg?v=1721804239" alt="Beauty" class="w-full h-40 object-cover">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Beauty</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">RETINOL + COLLAGENE Sérum visage hydratant anti-âge ++</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$15.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★★★</span>
+                                <span class="text-gray-400 text-[10px]">(2.3k sold)</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-center mt-12">
+                        <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-10 rounded-full transition-colors text-sm">
+                            See More Products
+                        </button>
+                    </div>
+                </section>
+
+            </section>
+        </main>
+    </div>
+
+    <footer class="bg-white border-t border-gray-100 p-12 mt-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-4 gap-8">
+            <div>
+                <h1 class="text-2xl font-bold text-blue-700 italic">Double Shop</h1>
+                <p class="text-gray-400 text-sm">Your premium destination for curated excellence. Discover the best in tech, fashion and lifestyle.</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Customer Care</h5>
+                <ul class="text-gray-500 text-sm space-y-2">
+                    <li class="hover:text-blue-600 cursor-pointer">Help Center</li>
+                    <li class="hover:text-blue-600 cursor-pointer">Track Order</li>
+                    <li class="hover:text-blue-600 cursor-pointer">Shipping & Delivery</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Policy</h5>
+                <ul class="text-gray-500 text-sm space-y-2">
+                    <li class="hover:text-blue-600 cursor-pointer">Return Policy</li>
+                    <li class="hover:text-blue-600 cursor-pointer">Privacy Policy</li>
+                    <li class="hover:text-blue-600 cursor-pointer">Contact Us</li>
+                </ul>
+            </div>
+            </div>
+        <div class="text-center mt-12 pt-8 border-t border-gray-50 text-xs text-gray-400">
+            © 2026 Double Shop Digital Flagship. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

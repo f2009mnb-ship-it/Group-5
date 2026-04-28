@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Shop - Your Bag</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="text-slate-700">
+
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <h1 class="text-2xl font-bold text-blue-700 italic">Double Shop</h1>
+            <nav class="hidden md:flex space-x-8 text-gray-600 font-medium">
+                <a href="#" onclick="window.location.href='home.html'" class="hover:text-blue-700">Home</a>
+                <a href="#" class="hover:text-blue-700">Deals</a>
+                <a href="#" class="hover:text-blue-700">Categories</a>
+                <a href="#" class="hover:text-blue-700">Help</a>
+            </nav>
+            <div class="flex items-center space-x-5 text-gray-500">
+                <button class="hover:text-blue-700"><i class="fa-solid fa-gear text-xl"></i></button>
+            </div>
+        </div>
+    </header>
+    <div class="flex min-h-screen max-w-[1440px]">
+        <aside class="w-64 bg-white m-6 rounded-3xl shadow-sm flex flex-col p-6 h-fit sticky top-24">
+            <div class="text-center mb-8">
+                <div class="w-20 h-20 bg-slate-900 rounded-2xl mx-auto mb-3 flex items-center justify-center">
+                    <i class="fa-solid fa-user text-white text-3xl"></i>
+                </div>
+                <h2 id="side-name" class="font-bold text-lg">Sayngern</h2>
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Premium Member</p>
+            </div>
+
+            <nav class="space-y-1">
+                <a href="#" onclick="window.location.href='profile.html'"class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-xl transition">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4"></i> My Account
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium">
+                    <i data-lucide="package" class="w-4 h-4"></i> Orders
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-xl transition">
+                    <i data-lucide="heart" class="w-4 h-4"></i> Wishlist
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-xl transition">
+                    <i data-lucide="settings" class="w-4 h-4"></i> Settings
+                </a>
+            </nav>
+
+            <div class="mt-auto pt-40 space-y-4">
+                <a href="#" class="flex items-center gap-3 px-4 text-sm text-slate-400">
+                    <i data-lucide="help-circle" class="w-4 h-4"></i> Help Center
+                </a>
+                <button class="w-full py-3 bg-indigo-600 text-white rounded-xl font-medium shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition">Logout</button>
+            </div>
+        </aside>
+
+
+        <main class="flex-1 p-6 pr-12">
+            <h1 class="text-4xl font-black text-slate-900 mb-2">Order history</h1>
+            <div class="space-y-4 mt-8">
+                <div class="bg-white rounded-3xl p-6 flex items-center gap-6 shadow-sm border border-slate-50">
+                    <div class="w-32 h-32 bg-slate-50 rounded-2xl overflow-hidden flex-shrink-0">
+                        <img src="https://i.pinimg.com/1200x/67/ba/df/67badf5015601a8006c6a4c2908c2a38.jpg" alt="Nike Shoes" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold text-slate-800">Puma Speedcat OG – Red/White</h3>
+                        <p class="text-xs text-slate-400 mt-1 font-medium">Size: 40 | Color: Red/White | Qty: 2 | status: Processing</p>
+                        </div>
+                    <div class="text-right">
+                        <span class="text-2xl font-black text-slate-900">$258.00</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 flex items-center gap-6 shadow-sm border border-slate-50">
+                    <div class="w-32 h-32 bg-slate-50 rounded-2xl overflow-hidden flex-shrink-0">
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1968&auto=format&fit=crop" alt="AirPods" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold text-slate-800">Apple AirPods Max Wireless Over-Ear Headphones</h3>
+                        <p class="text-xs text-slate-400 mt-1 font-medium">Size: -- | Color: Gray | Qty: 1 | status: Shipped</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-2xl font-black text-slate-900">FREE</span>
+                    </div>
+                </div>
+            </div>
+            
+            </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

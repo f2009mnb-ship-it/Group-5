@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoubleShop - 12.12 Mega Sale</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .hover-bounce {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hover-bounce:hover {
+            transform: scale(1.05);
+        }
+        
+        .custom-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between shadow-sm">
+        <div class="flex max-w-7xl mx-auto items-center gap-47">
+            <h1 class="text-2xl font-bold text-blue-700 italic">Double Shop</h1>
+            <div class="relative flex-1 max-w-md mx-8 hidden md:block w-96">
+                <input type="text" placeholder="Search for products, brands and shops" 
+                       class="w-full bg-gray-100 border-none rounded-full py-2 px-4 pl-10 focus:ring-2 focus:ring-blue-500">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-gray-400"></i>
+            </div>
+        </div>
+        <div class="flex items-center gap-6 text-sm font-medium">
+            <a href="#" onclick="window.location.href='home.html'" class="hover:text-blue-700">Home</a>
+            <a href="#" class="hover:text-blue-700">New Arrivals</a>
+            <a href="#" class="hover:text-blue-700">Best Sellers</a>
+            <a href="#" class="hover:text-blue-700">Brands</a>
+            <div class="flex items-center gap-4 ml-4 text-xl">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+                <i class="fa-solid fa-star"></i>
+                <i onclick="window.location.href='login.html'" class="fa-solid fa-user hover:text-blue-700"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex">
+        <aside class="w-64 h-[calc(100vh-64px)] sticky top-[64px] bg-white border-r border-gray-200 p-6 overflow-y-auto custom-scroll">
+            <h3 class="font-bold mb-4 text-gray-500 uppercase text-xs">Categories</h3>
+            <ul class="space-y-4">
+                <li class="flex items-center gap-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium cursor-pointer p-2">
+                    <i class="fa-solid fa-computer"></i> Electronics
+                </li>
+                <li class="flex items-center gap-3 text-gray-500 hover:text-blue-700 cursor-pointer p-2 hover:bg-gray-50 rounded-lg transition-all">
+                    <i class="fa-solid fa-shirt"></i> Fashion
+                </li>
+                <li class="flex items-center gap-3 text-gray-500 hover:text-blue-700 cursor-pointer p-2 hover:bg-gray-50 rounded-lg transition-all">
+                    <i class="fa-solid fa-house"></i> Home & Living
+                </li>
+                <li class="flex items-center gap-3 text-gray-500 hover:text-blue-700 cursor-pointer p-2 hover:bg-gray-50 rounded-lg transition-all">
+                    <i class="fa-solid fa-heart"></i> Health & Beauty
+                </li>
+                <li class="flex items-center gap-3 text-gray-500 hover:text-blue-700 cursor-pointer p-2 hover:bg-gray-50 rounded-lg transition-all">
+                    <i class="fa-solid fa-futbol"></i> Sports
+                </li>
+                <li class="flex items-center gap-3 text-gray-500 hover:text-blue-700 cursor-pointer p-2 hover:bg-gray-50 rounded-lg transition-all">
+                    <i class="fa-solid fa-robot"></i> Toys
+                </li>
+            </ul>
+            <button class="w-full mt-8 py-2 bg-gray-200 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors">
+                View All Categories
+            </button>
+        </aside>
+
+        <main class="flex-1 p-8">
+            <section class="mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                        <div class="bg-white rounded-2xl p-4 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative overflow-hidden">
+                                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-black?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692923777972" alt="iPhone 15" class="w-full h-40 object-cover ">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">New Tech</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">Iphone 15 256GB black</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$899.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★★★</span>
+                                <span class="text-gray-400 text-[10px]">(1.2k sold)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative">
+                                <img src="https://i.pinimg.com/736x/9c/20/b0/9c20b0ba6251ef3ee0282cf159cf29c4.jpg" alt="Jacket" class="w-full h-40 object-cover">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Lifestyle</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">Ring Light with Tripod Stand</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$15.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★★★</span>
+                                <span class="text-gray-400 text-[10px]">(5k+ sold)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative">
+                                <img src="https://i.pinimg.com/1200x/ce/ca/af/cecaaf7805a5d0e3f9ec9a20cd5becd6.jpg" alt="Table" class="w-full h-40 object-cover">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Lifestyle</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">Table Gaming</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$28.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★☆☆</span>
+                                <span class="text-gray-400 text-[10px]">(800 sold)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative">
+                                <img src="https://images.hothardware.com/contentimages/article/3292/content/small_lid-apple-macbook-pro-14-m2-pro-2023.jpg" alt="Laptop" class="w-full h-40 object-cover">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Premium</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">MacBook Pro 14</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$1,249.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★★★</span>
+                                <span class="text-gray-400 text-[10px]">(450 sold)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative">
+                                <img src="https://i.pinimg.com/1200x/f2/8b/b8/f28bb8e4b2a0d6811bd1eddb35d3949f.jpg" alt="Beauty" class="w-full h-40 object-cover">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Lifestyle</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">Desktop Microphone</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$15.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★★★</span>
+                                <span class="text-gray-400 text-[10px]">(2.3k sold)</span>
+                            </div>
+                        </div>
+                </div>
+
+                <section class="mt-16 mb-12">
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                        
+                        <div class="bg-white rounded-2xl p-4 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative overflow-hidden">
+                                <img src="https://i.pinimg.com/1200x/59/11/12/5911126426eebe0b50c5bf36dd3584e2.jpg" alt="iPhone 15" class="w-full h-40 object-cover ">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">New Tech</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">Power Strip</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$19.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★★★</span>
+                                <span class="text-gray-400 text-[10px]">(1.2k sold)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative">
+                                <img src="https://i.pinimg.com/736x/d5/0f/6c/d50f6ce8a929e05059b08bbdc6a8b6ff.jpg" alt="Jacket" class="w-full h-40 object-cover">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Lifestyle</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">Blender</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$22.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★★★</span>
+                                <span class="text-gray-400 text-[10px]">(5k+ sold)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative">
+                                <img src="https://i.pinimg.com/1200x/f8/9a/f6/f89af6cb9dbff9273c1e02c1d91d104a.jpg" alt="Table" class="w-full h-40 object-cover">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Lifestyle</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">Desk Lamp</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$15.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★☆☆</span>
+                                <span class="text-gray-400 text-[10px]">(800 sold)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative">
+                                <img src="https://i.pinimg.com/736x/51/5c/0a/515c0a553d43a4d0ade2dd333047eac6.jpg" alt="Laptop" class="w-full h-40 object-cover">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Premium</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">Wall-Mounted Split System Air Conditioner</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$2,249.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★★★</span>
+                                <span class="text-gray-400 text-[10px]">(450 sold)</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 shadow-sm border border-transparent hover:border-blue-200 hover-bounce cursor-pointer group">
+                            <div class="bg-gray-50 rounded-xl p-6 mb-4 relative">
+                                <img src="https://i.pinimg.com/736x/04/a1/04/04a1046725d02516b68446a688f1543c.jpg" alt="Beauty" class="w-full h-40 object-cover">
+                                <span class="absolute top-3 left-3 bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded-md uppercase">Lifestyle</span>
+                            </div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">Handheld Fan</h4>
+                            <p class="text-blue-600 font-extrabold text-lg mb-2">$8.00</p>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-400 text-xs">★★★★★</span>
+                                <span class="text-gray-400 text-[10px]">(2.3k sold)</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-center mt-12">
+                        <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-10 rounded-full transition-colors text-sm">
+                            See More Products
+                        </button>
+                    </div>
+                </section>
+
+            </section>
+        </main>
+    </div>
+
+    <footer class="bg-white border-t border-gray-100 p-12 mt-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-4 gap-8">
+            <div>
+                <h1 class="text-2xl font-bold text-blue-700 italic">Double Shop</h1>
+                <p class="text-gray-400 text-sm">Your premium destination for curated excellence. Discover the best in tech, fashion and lifestyle.</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Customer Care</h5>
+                <ul class="text-gray-500 text-sm space-y-2">
+                    <li class="hover:text-blue-600 cursor-pointer">Help Center</li>
+                    <li class="hover:text-blue-600 cursor-pointer">Track Order</li>
+                    <li class="hover:text-blue-600 cursor-pointer">Shipping & Delivery</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4">Policy</h5>
+                <ul class="text-gray-500 text-sm space-y-2">
+                    <li class="hover:text-blue-600 cursor-pointer">Return Policy</li>
+                    <li class="hover:text-blue-600 cursor-pointer">Privacy Policy</li>
+                    <li class="hover:text-blue-600 cursor-pointer">Contact Us</li>
+                </ul>
+            </div>
+            </div>
+        <div class="text-center mt-12 pt-8 border-t border-gray-50 text-xs text-gray-400">
+            © 2026 Double Shop Digital Flagship. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

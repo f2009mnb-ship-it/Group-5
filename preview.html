@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Shop - Puma Speedcat OG</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <h1 class="text-2xl font-bold text-blue-700 italic">Double Shop</h1>
+            <div class="flex-1 max-w-md mx-8 hidden md:block">
+                <div class="relative">
+                    <input type="text" placeholder="Search brands, styles, sizes..." class="w-full bg-gray-100 rounded-full py-2 px-10 focus:outline-none">
+                    <i class="fa fa-search absolute left-4 top-3 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <button id="wishlist-btn" onclick="toggleWishlist()" class="focus:outline-none transition-transform active:scale-125">
+                    <i id="star-icon" class="fa-regular fa-star text-xl cursor-pointer transition-colors duration-300"></i>
+                </button>
+                
+                <div class="relative cursor-pointer">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            
+            <div class="bg-[#f9f9f9] rounded-3xl p-8 flex justify-center items-center">
+                <img src="https://i.pinimg.com/1200x/67/ba/df/67badf5015601a8006c6a4c2908c2a38.jpg" 
+                     alt="Puma Speedcat OG" class="w-full h-auto drop-shadow-2xl">
+            </div>
+
+            <div class="flex flex-col gap-6">
+                <div>
+                    <span class="bg-indigo-100 text-blue-700 text-xs font-bold px-3 py-1 rounded uppercase">Heritage Pack</span>
+                    <span class="text-gray-400 text-sm mt-2">SKU: PM-SC-001</span>
+                    <h2 class="text-4xl font-extrabold mt-1 tracking-tight">Puma Speedcat OG – Red/White</h2>
+                    <div class="flex items-center gap-2 mt-3">
+                        <div class="flex text-blue-700">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="font-bold">5</span>
+                        <span class="text-gray-400 text-sm">(120 verified reviews)</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm">
+                    <div class="flex items-baseline gap-3">
+                        <span class="text-4xl text-blue-700 font-bold text-brand-blue">$129.000</span>
+                        <span class="text-gray-400 line-through text-xl">$235.000</span>
+                        <span class="bg-red-100 text-red-600 font-bold text-xs px-2 py-1 rounded">SAVE 45%</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mt-4 leading-relaxed">
+                        Inspired by F1 racing culture, the Speedcat brings speed and style to the streets.
+                        Features a low-profile rubber outsole and a premium suede finish for that classic 
+                        motorsport silhouette.
+                    </p>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="font-bold">Select Size (EU)</span>
+                        <button class="text-blue-700 text-sm font-semibold underline">Size Guide</button>
+                    </div>
+                    <div class="grid grid-cols-3 md:grid-cols-6 gap-3" id="size-container">
+                        <button class="size-btn border rounded-xl py-3 font-semibold transition-all hover:border-brand-blue" onclick="selectSize(this)">38</button>
+                        <button class="size-btn border rounded-xl py-3 font-semibold transition-all hover:border-brand-blue" onclick="selectSize(this)">39</button>
+                        <button class="size-btn bg-blue-700 text-white rounded-xl py-3 font-semibold" onclick="selectSize(this)">40</button>
+                        <button class="size-btn border rounded-xl py-3 font-semibold transition-all hover:border-brand-blue" onclick="selectSize(this)">41</button>
+                        <button class="size-btn border rounded-xl py-3 font-semibold transition-all hover:border-brand-blue" onclick="selectSize(this)">42</button>
+                        <button class="size-btn border rounded-xl py-3 font-semibold transition-all hover:border-brand-blue" onclick="selectSize(this)">43</button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center bg-gray-100 rounded-xl px-4 py-2">
+                            <button onclick="updateQty(-1)" class="text-xl px-2 hover:text-brand-blue">-</button>
+                            <span id="qty" class="w-12 text-center font-bold">1</span>
+                            <button onclick="updateQty(1)" class="text-xl px-2 hover:text-brand-blue">+</button>
+                        </div>
+                        <span class="text-blue-700 bg-indigo-50 px-4 py-2 rounded-lg text-sm font-bold text-center ml-auto">
+                            Only 3 items left in stock!
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <button onclick="window.location.href='cart.html'" class="border-2 border-brand-blue text-blue-700 py-4 rounded-2xl font-bold hover:bg-indigo-50 transition-colors">Add to Cart</button>
+                        <button onclick="window.location.href='payment.html'" class="bg-blue-700 text-white py-4 rounded-2xl font-bold hover:opacity-50 transition-opacity">Buy Now</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-indigo-50 p-4 rounded-2xl flex items-center gap-3">
+                        <i class="fa-solid fa-truck text-brand-blue text-xl"></i>
+                        <div>
+                            <p class="text-xs font-bold uppercase">Free Delivery</p>
+                            <p class="text-[10px] text-gray-500">2-3 Business Days</p>
+                        </div>
+                    </div>
+                    <div class="bg-indigo-50 p-4 rounded-2xl flex items-center gap-3">
+                        <i class="fa-regular fa-circle-check text-brand-blue text-xl"></i>
+                        <div>
+                            <p class="text-xs font-bold uppercase">Authentic</p>
+                            <p class="text-[10px] text-gray-500">Genuine Puma Product</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function updateQty(val) {
+            const qtyElement = document.getElementById('qty');
+            let currentQty = parseInt(qtyElement.innerText);
+            currentQty += val;
+            if (currentQty < 1) currentQty = 1;
+            qtyElement.innerText = currentQty;
+        }
+
+        function selectSize(btn) {
+            document.querySelectorAll('.size-btn').forEach(el => {
+                el.classList.remove('bg-blue-700', 'text-white', 'shadow-lg', 'shadow-indigo-200');
+                el.classList.add('border', 'text-gray-900');
+            });
+
+            btn.classList.add('bg-blue-700', 'text-white', 'shadow-lg', 'shadow-indigo-200');
+            btn.classList.remove('border');
+        }
+
+        function toggleWishlist() {
+            const starIcon = document.getElementById('star-icon');
+            
+            if (starIcon.classList.contains('fa-regular')) {
+                starIcon.classList.remove('fa-regular');
+                starIcon.classList.add('fa-solid', 'text-amber-500');
+            } else {
+                starIcon.classList.remove('fa-solid', 'text-amber-500');
+                starIcon.classList.add('fa-regular');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Shop - Checkout</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-[#F8FAFC] font-sans text-gray-800">
+
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <h1 class="text-2xl font-bold text-blue-700 italic">Double Shop</h1>
+            <div class="flex items-center gap-2 text-gray-500 text-sm uppercase tracking-wider">
+                <i class="fa-solid fa-lock"></i> Secure Checkout
+            </div>
+        </div>
+    </header>
+
+
+    <main class="max-w-6xl mx-auto mt-10 p-4 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <div class="lg:col-span-2">
+            <h1 class="text-2xl font-bold mb-2">Select Payment Method</h1>
+            <p class="text-gray-500 mb-8">All transactions are secure and encrypted.</p>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+                <div onclick="selectPayment('card')" id="opt-card" class="payment-opt p-6 bg-white border-2 border-blue-700 rounded-xl cursor-pointer relative transition-all">
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-4 text-blue-700">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div>
+                    <h3 class="font-bold">Credit / Debit Card</h3>
+                    <p class="text-xs text-gray-400">Visa, Mastercard, JCB, AMEX</p>
+                    <div class="absolute top-4 right-4 text-blue-700 check-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                </div>
+
+                <div onclick="selectPayment('promptpay')" id="opt-promptpay" class="payment-opt p-6 bg-gray-100/50 border-2 border-transparent rounded-xl cursor-pointer hover:border-gray-200 transition-all">
+                    <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center mb-4 text-gray-600">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-700">PromptPay</h3>
+                    <p class="text-xs text-gray-400">Scan QR with any bank app</p>
+                    <div class="absolute top-4 right-4 text-blue-700 check-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                </div>
+
+                <div onclick="selectPayment('mobile')" id="opt-mobile" class="payment-opt p-6 bg-gray-100/50 border-2 border-transparent rounded-xl cursor-pointer hover:border-gray-200 transition-all">
+                    <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center mb-4 text-gray-600">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-700">Mobile Banking</h3>
+                    <p class="text-xs text-gray-400">Direct pay via Bank Apps</p>
+                </div>
+
+                <div onclick="selectPayment('cod')" id="opt-cod" class="payment-opt p-6 bg-gray-100/50 border-2 border-transparent rounded-xl cursor-pointer hover:border-gray-200 transition-all">
+                    <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center mb-4 text-gray-600">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-700">Cash on Delivery</h3>
+                    <p class="text-xs text-gray-400">Pay when items arrive</p>
+                </div>
+            </div>
+
+            <div id="card-form" class="bg-[#F1F5F9]/50 p-8 rounded-xl space-y-6">
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Cardholder Name</label>
+                    <input type="text" placeholder="ALEX JOHNSON" class="w-full p-4 bg-white rounded-lg border-none focus:ring-2 focus:ring-blue-500 outline-none placeholder-gray-300">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Card Number</label>
+                    <div class="relative">
+                        <input type="text" placeholder="0000 0000 0000 0000" class="w-full p-4 bg-white rounded-lg border-none focus:ring-2 focus:ring-blue-500 outline-none placeholder-gray-300">
+                        <div class="absolute right-4 top-1/2 -translate-y-1/2 flex gap-2">
+                            <div class="w-8 h-5 bg-gray-200 rounded-sm"></div>
+                            <div class="w-8 h-5 bg-gray-200 rounded-sm"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Expiry Date</label>
+                        <input type="text" placeholder="MM / YY" class="w-full p-4 bg-white rounded-lg border-none focus:ring-2 focus:ring-blue-500 outline-none placeholder-gray-300">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase mb-2">CVV</label>
+                        <div class="relative">
+                            <input type="password" placeholder="***" class="w-full p-4 bg-white rounded-lg border-none focus:ring-2 focus:ring-blue-500 outline-none placeholder-gray-300">
+                            <i class="fa-regular fa-circle-question absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <h2 class="text-xl font-bold mb-6">Order Summary</h2>
+                
+                <div class="space-y-6 mb-8">
+                    <div class="flex gap-4">
+                        <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden">
+                            <img src="https://i.pinimg.com/1200x/67/ba/df/67badf5015601a8006c6a4c2908c2a38.jpg" alt="Shoes" class="mix-blend-multiply">
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <h4 class="text-sm font-semibold leading-tight">Puma Speedcat OG – Red/White</h4>
+                                <span class="font-bold">$258.00</span>
+                            </div>
+                            <p class="text-xs text-gray-400">Qty: 2 </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3 text-sm mb-6">
+                    <div class="flex justify-between text-gray-500">
+                        <span>Subtotal</span>
+                        <span class="text-blue-700 font-semibold">$258.00</span>
+                    </div>
+                    <div class="flex justify-between text-gray-500">
+                        <span>Shipping</span>
+                        <span class="text-blue-700 font-semibold">$12.50</span>
+                    </div>
+                    <div class="flex justify-between text-gray-500">
+                        <span>Tax estimate</span>
+                        <span class="text-blue-700 font-semibold">$20.64</span>
+                    </div>
+                    <div class="flex justify-between text-gray-500">
+                        <span>Discount</span>
+                        <span class="text-red-500 font-semibold">-$0.00</span>
+                    </div>
+                </div>
+
+                <div class="border-t border-dashed pt-4 mb-8">
+                    <div class="flex justify-between items-end">
+                        <span class="font-bold text-gray-800">Total Amount</span>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-blue-700">$291.14</div>
+                            <div class="text-[10px] text-gray-400 font-bold uppercase">VAT Included</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="placeOrder(); window.location.href='success.html';" class="w-full bg-blue-700 hover:bg-blue-300 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-colors">
+                    Place Order <i class="fa-solid fa-arrow-right text-sm"></i>
+                </button>
+
+                <p class="text-[10px] text-gray-400 text-center mt-4 px-4 leading-relaxed">
+                    By clicking Place Order, you agree to our <span class="underline text-blue-700">Terms of Service</span> and <span class="underline text-blue-700">Privacy Policy</span>.
+                </p>
+            </div>
+
+            <div class="bg-blue-100/50 p-6 rounded-2xl flex gap-4 border border-blue-300">
+                <div class="w-10 h-10 flex items-center justify-center text-white shrink-0">
+                    <i class="fa-regular fa-circle-check text-blue-700 text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-blue-700 mb-1">Buyer Protection</h4>
+                    <p class="text-xs text-blue-700/70">Get a full refund if the item is not as described or is not delivered.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let selectedMethod = 'card';
+        const totalAmount = "$291.14";
+
+        function selectPayment(method) {
+            selectedMethod = method;
+            
+            document.querySelectorAll('.payment-opt').forEach(el => {
+                el.classList.remove('bg-white', 'border-blue-600');
+                el.classList.add('bg-gray-100/50', 'border-transparent');
+                const check = el.querySelector('.check-icon');
+                if (check) check.remove();
+                
+                el.querySelector('div').classList.remove('bg-gray-200', 'text-gray-600');
+                el.querySelector('div').classList.add('bg-blue-100', 'text-blue-600');
+                el.querySelector('h3').classList.add('text-gray-700');
+            });
+
+            const selectedEl = document.getElementById('opt-' + method);
+            selectedEl.classList.remove('bg-gray-100/50', 'border-transparent');
+            selectedEl.classList.add('bg-white', 'border-blue-600');
+            
+            selectedEl.querySelector('div').classList.remove('bg-gray-200', 'text-gray-600');
+            selectedEl.querySelector('div').classList.add('bg-blue-100', 'text-blue-600');
+            selectedEl.querySelector('h3').classList.remove('text-gray-700');
+
+            selectedEl.insertAdjacentHTML('beforeend', `
+                <div class="absolute top-4 right-4 text-blue-600 check-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+            `);
+
+            const cardForm = document.getElementById('card-form');
+            if (method === 'card') {
+                cardForm.style.opacity = '1';
+                cardForm.style.pointerEvents = 'auto';
+            } else {
+                cardForm.style.opacity = '0.3';
+                cardForm.style.pointerEvents = 'none';
+            }
+        }
+
+        function placeOrder() {
+            const methodNames = {
+                'card': 'Credit / Debit Card',
+                'promptpay': 'PromptPay',
+                'mobile': 'Mobile Banking',
+                'cod': 'Cash on Delivery'
+            };
+
+            alert(
+                "Payment Successful!\n" +
+                "Total Amount: " + totalAmount + "\n" +
+                "Payment Method: " + methodNames[selectedMethod] + "\n\n" +
+                "Thank you for shopping with Double Shop"
+            );
+        }
+    </script>
+
+</body>
+</html>
